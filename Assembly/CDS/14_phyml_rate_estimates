@@ -1,0 +1,23 @@
+For a user tree I pruned the phylogeny of all neoaves bird families (Jarvis et al. 2014)
+Here I pruned to four taxa that were the same as the genes used in this study or representatives from their 
+respective orders to include:
+Bucerotiformes = Buceros
+Coraciiformes = Merops
+Piciformes = Colaptes
+Trogoniformes = Apaloderma
+This tree was pruned in step 8b, producing unrooted_pruned_tre.tre. The tree was then modified by substituting Colaptes for Picoides in the .tre file (for ease of use with phyml).
+
+
+With the four-fold degenerate sites alignment of the four individuals, I estimated a model of sequence evolution using 
+jModelTest
+best model as decided by AIC = GTR + I
+
+# Here, I used an unrooted four taxon user tree for use in PhyML to estimate branch lengths using 14a_phyml_command
+
+# next, to estimate the substitution rate in Colaptes, estimate the % divergence by the branch length in the tree
+# and dividing that by the mean and 95% HPD of the divergence time between Colaptes and Merops (more details on mutation rate estimates for other orders in 15_mutation_rate_estimation.R
+# divergence times from input phylogeny (in millions of years): mean = 42.3418, 95% HPD = 34.1 - 48.0
+# calculation = colaptes_branch_length / (divergence_times * 1e6)
+# in r:
+0.16969979/(c(34.1, 42.3418, 48.0) * 1e6)
+# output: 4.976533e-09 4.007855e-09 3.535412e-09

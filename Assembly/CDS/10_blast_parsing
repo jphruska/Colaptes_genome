@@ -1,0 +1,3 @@
+Run the r script 10a_reciprocal_blast_parsing.r, which looks at all of the blast results and finds the genes where colaptes and the other species have reciprocal
+best hits for colaptes genes. It then makes a summary table of the names of all of these genes and a fasta file for each group, for future multiple alignment and tests for selection, etc.
+
