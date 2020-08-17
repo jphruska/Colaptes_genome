@@ -1,0 +1,4 @@
+# colaptes repeatmasker calcDivergenceFromAlign.pl 
+
+/home/jmanthey/RepeatMasker/util/calcDivergenceFromAlign.pl -s colaptes.divsum -a colaptes_with_div.align 
+c05_colaptes_arcs3.FINAL.reordered_2.fasta.align.gz 

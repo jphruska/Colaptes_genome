@@ -1,0 +1,3 @@
+# colaptes repeatmasker createRepeatLandscape.pl
+
+/home/jmanthey/RepeatMasker/util/createRepeatLandscape.pl -div colaptes.divsum > colaptes.html 
