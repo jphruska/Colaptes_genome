@@ -1,1 +1,3 @@
+PacBio assembly workflow 
 
+1. Run command in canu_pacbio_assembly.txt.  
