@@ -14,16 +14,16 @@ blastn -query colaptes-families.fa -out colaptes_families_repbase.blast -task rm
 
 # make a blast database of the colaptes genome (non-filtered or reeorganized to zebra finch order)
 cd /lustre/work/jmanthey/certhia_genome
-makeblastdb -in 05_certhia_hic.fasta -dbtype nucl -out ca_original
+makeblastdb -in colaptes_hic.fasta -dbtype nucl -out ca_original
 
 # blast repeatmodeler output to colaptes genome and take top 100 hits
 # output fields: qseqid qlen sseqid sstart send pident length evalue
-blastn -query certhia-families.fa -out certhia_repeatmodeler_genomic.blast -task rmblastn -db ca_original \
+blastn -query colaptes-families.fa -out colaptes_repeatmodeler_genomic.blast -task rmblastn -db ca_original \
 -evalue 1e-20 -outfmt '6 qseqid qlen sseqid sstart send pident length evalue' -perc_identity 90 -qcov_hsp_perc 20 \
 -max_target_seqs 100
 
 # filter the top 50 hits for each sequence (if > 50 exist) and create a bed file for extraction of genomic sequence and flanks
-# use the r script: certhia_filter_repeatmodeler_blast.r
+# use the r script: colaptes_filter_repeatmodeler_blast.r
 
 
 # use bedtools to extract fasta sequences from the reference genome based on the previous steps
