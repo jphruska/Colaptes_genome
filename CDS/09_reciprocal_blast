@@ -1,0 +1,47 @@
+# remove all spaces in fasta files and replace with periods
+
+sed -i 's/ /./g' colaptes_cds_renamed.fasta
+sed -i 's/ /./g' merops_cds_renamed.fasta
+sed -i 's/ /./g' apaloderma_cds_renamed.fasta
+sed -i 's/ /./g' picoides_cds_renamed.fasta
+sed -i 's/ /./g' buceros_cds_renamed.fasta
+
+# make blast databases for each of the species' CDS files
+
+makeblastdb -in colaptes_cds_renamed.fasta -dbtype nucl -out colaptes_cds
+makeblastdb -in merops_cds_renamed.fasta -dbtype nucl -out merops_cds
+makeblastdb -in apaloderma_cds_renamed.fasta -dbtype nucl -out apaloderma_cds
+makeblastdb -in picoides_cds_renamed.fasta -dbtype nucl -out picoides_cds
+makeblastdb -in buceros_cds_renamed.fasta -dbtype nucl -out buceros_cds
+
+# blast certhia to each of the others' databases
+# output fields: qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore
+
+blastn -query colaptes_cds_renamed.fasta -out q_colaptes_s_merops.blast -task blastn -db merops_cds \
+-evalue 1e-6 -outfmt 6 -max_target_seqs 100 -num_threads 12
+
+blastn -query colaptes_cds_renamed.fasta -out q_colaptes_s_apaloderma.blast -task blastn -db apaloderma_cds \
+-evalue 1e-6 -outfmt 6 -max_target_seqs 100 -num_threads 12
+
+blastn -query colaptes_cds_renamed.fasta -out q_colaptes_s_picoides.blast -task blastn -db picoides_cds \
+-evalue 1e-6 -outfmt 6 -max_target_seqs 100 -num_threads 12
+
+blastn -query colaptes_cds_renamed.fasta -out q_colaptes_s_buceros.blast -task blastn -db buceros_cds \
+-evalue 1e-6 -outfmt 6 -max_target_seqs 100 -num_threads 12
+
+
+# blast other species to certhia database
+
+blastn -query merops_cds_renamed.fasta -out q_merops_s_colaptes.blast -task blastn -db colaptes_cds \
+-evalue 1e-6 -outfmt 6 -max_target_seqs 100 -num_threads 12
+
+blastn -query apaloderma_cds_renamed.fasta -out q_apaloderma_s_colaptes.blast -task blastn -db colaptes_cds \
+-evalue 1e-6 -outfmt 6 -max_target_seqs 100 -num_threads 12
+
+blastn -query picoides_cds_renamed.fasta -out q_picoides_s_colaptes.blast -task blastn -db colaptes_cds \
+-evalue 1e-6 -outfmt 6 -max_target_seqs 100 -num_threads 12
+
+blastn -query buceros_cds_renamed.fasta -out q_buceros_s_colaptes.blast -task blastn -db colaptes_cds \
+-evalue 1e-6 -outfmt 6 -max_target_seqs 100 -num_threads 12
+
+

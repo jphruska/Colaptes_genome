@@ -1,0 +1,2 @@
+/Users/mantheylab2/Downloads/phyml-3.3.20190321/src/phyml -i _total_4d_sites.nex -d nt -q -m GTR /
+-v e -u unrooted_tree.tre -o lr

@@ -1,0 +1,10 @@
+# create naming table
+maker_map_ids --prefix Colaptes --justify 5  colaptes_round2.all.maker.gff > colaptes_round2.all.maker.name.map
+
+# replace names in GFF files
+map_gff_ids colaptes_round2.all.maker.name.map colaptes_round2.all.maker.gff
+map_gff_ids colaptes_round2.all.maker.name.map colaptes_round2.all.maker.noseqs.gff
+
+# replace names in FASTA headers
+map_fasta_ids colaptes_round2.all.maker.name.map Caur_rnd2.all.maker.transcripts.fasta
+map_fasta_ids colaptes_round2.all.maker.name.map Caur_rnd2.all.maker.proteins.fasta
