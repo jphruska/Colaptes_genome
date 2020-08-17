@@ -1,0 +1,17 @@
+Custom Library
+
+1. Run repeatmodeler on assembly lacking HiC scaffolding (c05_colaptes_arcs3.fasta) to identify repeats de novo. Prior to running repeatmodeler, build database of reference. 
+2. Run repeatmodeler. 
+3. Build database of vertebrate repbase. 
+4. Rmblast the repeatmodeler output to vertebrate repbase database. 
+5. Remove any repeatmodeler sequences that are >= 98% to repbase sequences. 
+6. Make a blast database of the colaptes assembly. 
+7. Blast repeatmodeler output to colaptes assembly and take top 100 hits. 
+8. Filter top 50 hits for each sequence and create a bed file to use for extraction of genomic sequences and flanks, using colaptes_filter_repeatmodeler.blast.R. 
+9. Use bedtools to extract fasta sequences from the reference genome. 
+10. Take all the fasta files, input into geneious and make alignments with mafft to develop consensus sequences. 
+
+Repeat Masking
+
+
+TE Window Analysis
