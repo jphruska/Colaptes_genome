@@ -1,0 +1,3 @@
+/lustre/work/jmanthey/canu-1.7.1/Linux-amd64/bin/canu -p colaptes -d colaptes-pb genomeSize=1600000000 -pacbio-raw 01_input/colaptes_part?.pb.fasta \
+gnuplotTested=true gridEngineMemoryOption="-l h_vmem=MEMORY" gridEngineThreadsOption="-pe sm THREADS" gridOptions="-P quanah -q omni" \
+correctedErrorRate=0.065 corMhapSensitivity=normal \
