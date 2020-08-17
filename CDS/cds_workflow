@@ -8,7 +8,7 @@ Gene discovery and annotation
 4. Run second round of MAKER with Augustus and SNAP. 
 5. Prepare gff files for round 2 of MAKER. 
 6. Rename MAKER round 2 output. 
-7. Extract CDS. 
+7. Extract CDS (colaptes_cds.fasta). 
 
 Mutation rate analysis
 
@@ -23,3 +23,6 @@ Mutation rate analysis
 16. Use Colaptes-specific branch length of resulting tree to estimate a mean and 95% HPD distribution of Colaptes-specific mutation rates. 
 
 Window analysis
+
+17. Reduce colaptes_cds.fasta file so it only includes information on the the start and end points of cds content on the scaffolds of interest (in this case the scaffolds that showed strong synteny to Gallus assembly). 
+18. Using the subsequent reduced cds content file, run colaptes_gene_window.R to obtain cds content (colaptes_cds_props.txt) along non-overlapping 100 kb windows. 
