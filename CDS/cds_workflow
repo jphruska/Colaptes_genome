@@ -25,4 +25,5 @@ Mutation rate analysis
 Window analysis
 
 17. Reduce colaptes_cds.fasta file so it only includes information on the the start and end points of cds content on the scaffolds of interest (in this case the scaffolds that showed strong synteny to Gallus assembly). 
-18. Using the subsequent reduced cds content file, run colaptes_gene_window.R to obtain cds content (colaptes_cds_props.txt) along non-overlapping 100 kb windows. 
+18. Use the subsequent reduced cds content file, run colaptes_gene_window.R to obtain cds content (colaptes_cds_props.txt) along non-overlapping 100 kb windows. 
+19. Use colaptes_cds_props.txt as input for plot_window_CDS.R to produce plot graph of CDS distribution across assembly. 
