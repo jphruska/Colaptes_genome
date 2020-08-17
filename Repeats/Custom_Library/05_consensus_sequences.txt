@@ -1,0 +1,7 @@
+# In Genenious, conduct the following:
+
+1. Align sequences for each novel repetitive element. 
+2. Generate 50 % majority consensus sequences from resulting alignments. 
+3. Trim ambiguous nucleotides at ends of sequences. 
+4. Repeat procedure in 03_repeatmodeler_refinement.txt if ends aren't recovered, extracting 1000 bp flanks on each side of blastn match, followed by alignment and consensus sequence generation. Repeat procedure up to 3 times if necessary. 
+5. Lastly, Blast novel repeats against RepBase database to assess similarity via homology to previously characterized elements. 
