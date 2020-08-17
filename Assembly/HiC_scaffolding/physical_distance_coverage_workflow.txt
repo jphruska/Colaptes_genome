@@ -1,0 +1,16 @@
+cat merged_nodups.txt | awk '{print $2 "\t" $3 "\t" $6 "\t" $7}' >> physical_contact_coverage.txt
+
+sed "s/,/\\t/g" physical_contact_coverage.txt >> physical_contact_coverage_a.txt
+
+cat physical_contact_coverage_a.txt | awk '{print $1 "\t" $4 "\t" $5 "\t" $8}' >> physical_contact_coverage_b.txt
+
+cat physical_contact_coverage_b.txt | awk '{ if ($1 == $3) print ($4 - $2)}' >> physical_contact_coverage_c.txt
+
+sed "s/-//g" physical_contact_coverage_c.txt >> physical_contact_coverage_d.txt
+
+cat physical_contact_coverage_d.txt | awk '{ sum += $1} END {print sum}' >> physical_contact_coverage_e.txt
+
+sum equaled 33161118323498
+
+
+33161118323498/1378187165 (total scaffold length) = 24,061.40
