@@ -1,8 +1,0 @@
-cd /lustre/scratch/johruska/colaptes/colaptes_reference_genome/maker/Caur_rnd2.maker.output
-
-# extract the cds for the entire gff
-cat colaptes_round2.all.maker.noseqs.gff | awk '{ if ($3 == "CDS") print $0 }' > colaptes_round2_cds.gff
-
-# extract sequences (make sure to force strandedness)
-bedtools getfasta -s -fi /lustre/scratch/johruska/colaptes/colaptes_reference_genome/reordered_reference_genome/c05_colaptes_arcs3.FINAL.fasta \
--bed colaptes_round2_cds.gff > colaptes_cds.fasta
