@@ -1,0 +1,75 @@
+# arcs
+cd /lustre/scratch/jmanthey/09_colaptes_scaffolding/
+~/longranger-2.2.2/longranger basic --id longranger_colaptes --fastqs /lustre/scratch/jmanthey/09_colaptes_scaffolding/colaptes --sample 5469-JDM-0003
+# mv longranger output to scaffolding directory
+ 
+
+cd links_v1.8.5/lib/bloomfilter/swig/
+module load gnu bwa samtools
+~/arcs-master/Examples/arcs-make arcs draft=/lustre/work/jmanthey/colaptes_arcs/colaptes_pilon_1 reads=/lustre/scratch/jmanthey/09_colaptes_scaffolding/colaptes_interleaved t=16 m=50-10000 r=0.05 a=0.5 s=97
+
+~/arcs-master/Examples/arcs-make arcs draft=/lustre/work/jmanthey/colaptes_arcs/colaptes_pilon_1 reads=/lustre/scratch/jmanthey/09_colaptes_scaffolding/colaptes_interleaved m=50-10000 r=0.05 a=0.5 s=98 l=3 e=60000 D=true
+~/arcs-master/Examples/arcs-make arcs draft=/lustre/work/jmanthey/colaptes_arcs/colaptes_pilon_1 reads=/lustre/scratch/jmanthey/09_colaptes_scaffolding/colaptes_interleaved m=50-10000 r=0.05 a=0.5 s=97 l=3 e=60000 D=true
+~/arcs-master/Examples/arcs-make arcs draft=/lustre/work/jmanthey/colaptes_arcs/colaptes_pilon_1 reads=/lustre/scratch/jmanthey/09_colaptes_scaffolding/colaptes_interleaved m=50-10000 r=0.05 a=0.5 s=98 l=3 e=30000 D=true
+~/arcs-master/Examples/arcs-make arcs draft=/lustre/work/jmanthey/colaptes_arcs/colaptes_pilon_1 reads=/lustre/scratch/jmanthey/09_colaptes_scaffolding/colaptes_interleaved m=50-10000 r=0.05 a=0.5 s=98 l=3 e=10000 D=true
+~/arcs-master/Examples/arcs-make arcs draft=/lustre/work/jmanthey/colaptes_arcs/colaptes_pilon_1 reads=/lustre/scratch/jmanthey/09_colaptes_scaffolding/colaptes_interleaved m=50-10000 r=0.05 a=0.5 s=97 l=3 e=10000 D=true
+~/arcs-master/Examples/arcs-make arcs draft=/lustre/work/jmanthey/colaptes_arcs/colaptes_pilon_1 reads=/lustre/scratch/jmanthey/09_colaptes_scaffolding/colaptes_interleaved m=50-10000 r=0.05 a=0.5 s=98 l=3 e=100000 D=true
+~/arcs-master/Examples/arcs-make arcs draft=/lustre/work/jmanthey/colaptes_arcs/colaptes_pilon_1 reads=/lustre/scratch/jmanthey/09_colaptes_scaffolding/colaptes_interleaved m=50-10000 r=0.05 a=0.5 s=97 l=3 e=100000 D=true
+
+# run second round of arcs
+cp colaptes_arcs/colaptes_pilon_1_c5_m50-10000_s97_r0.05_e60000_z500_l3_a0.5.scaffolds.fa colaptes_arcs/colaptes_pilon_1_arcs1.fa
+
+cd links_v1.8.5/lib/bloomfilter/swig/
+module load gnu bwa samtools
+~/arcs-master/Examples/arcs-make arcs draft=/lustre/work/jmanthey/colaptes_arcs/colaptes_pilon_1_arcs1 reads=/lustre/scratch/jmanthey/09_colaptes_scaffolding/colaptes_interleaved t=16 m=50-10000 r=0.05 a=0.5 s=97 e=60000 D=true
+~/arcs-master/Examples/arcs-make arcs draft=/lustre/work/jmanthey/colaptes_arcs/colaptes_pilon_1_arcs1 reads=/lustre/scratch/jmanthey/09_colaptes_scaffolding/colaptes_interleaved t=16 m=50-10000 r=0.05 a=0.5 s=97 l=3 e=10000 D=true
+~/arcs-master/Examples/arcs-make arcs draft=/lustre/work/jmanthey/colaptes_arcs/colaptes_pilon_1_arcs1 reads=/lustre/scratch/jmanthey/09_colaptes_scaffolding/colaptes_interleaved t=16 m=50-10000 r=0.05 a=0.5 s=98 l=3 e=10000 D=true
+~/arcs-master/Examples/arcs-make arcs draft=/lustre/work/jmanthey/colaptes_arcs/colaptes_pilon_1_arcs1 reads=/lustre/scratch/jmanthey/09_colaptes_scaffolding/colaptes_interleaved t=16 m=50-10000 r=0.05 a=0.5 s=97 l=3 e=30000 D=true
+~/arcs-master/Examples/arcs-make arcs draft=/lustre/work/jmanthey/colaptes_arcs/colaptes_pilon_1_arcs1 reads=/lustre/scratch/jmanthey/09_colaptes_scaffolding/colaptes_interleaved t=16 m=50-10000 r=0.05 a=0.5 s=98 l=3 e=30000 D=true
+~/arcs-master/Examples/arcs-make arcs draft=/lustre/work/jmanthey/colaptes_arcs/colaptes_pilon_1_arcs1 reads=/lustre/scratch/jmanthey/09_colaptes_scaffolding/colaptes_interleaved t=16 m=50-10000 r=0.05 a=0.5 s=97 l=3 e=60000 D=true
+~/arcs-master/Examples/arcs-make arcs draft=/lustre/work/jmanthey/colaptes_arcs/colaptes_pilon_1_arcs1 reads=/lustre/scratch/jmanthey/09_colaptes_scaffolding/colaptes_interleaved t=16 m=50-10000 r=0.05 a=0.5 s=98 l=3 e=60000 D=true
+~/arcs-master/Examples/arcs-make arcs draft=/lustre/work/jmanthey/colaptes_arcs/colaptes_pilon_1_arcs1 reads=/lustre/scratch/jmanthey/09_colaptes_scaffolding/colaptes_interleaved t=16 m=50-10000 r=0.05 a=0.5 s=97 l=3 e=100000 D=true
+~/arcs-master/Examples/arcs-make arcs draft=/lustre/work/jmanthey/colaptes_arcs/colaptes_pilon_1_arcs1 reads=/lustre/scratch/jmanthey/09_colaptes_scaffolding/colaptes_interleaved t=16 m=50-10000 r=0.05 a=0.5 s=98 l=3 e=100000 D=true
+
+# run third round of arcs
+cp colaptes_arcs/colaptes_pilon_1_arcs1_c5_m50-10000_s97_r0.05_e30000_z500_l3_a0.5.scaffolds.fa colaptes_arcs/colaptes_pilon_1_arcs2.fa
+
+cd links_v1.8.5/lib/bloomfilter/swig/
+module load gnu bwa samtools
+~/arcs-master/Examples/arcs-make arcs draft=/lustre/work/jmanthey/colaptes_arcs/colaptes_pilon_1_arcs2 reads=/lustre/scratch/jmanthey/09_colaptes_scaffolding/colaptes_interleaved t=34 m=50-10000 r=0.05 a=0.5 s=97 l=3 e=30000 D=true
+~/arcs-master/Examples/arcs-make arcs draft=/lustre/work/jmanthey/colaptes_arcs/colaptes_pilon_1_arcs2 reads=/lustre/scratch/jmanthey/09_colaptes_scaffolding/colaptes_interleaved t=16 m=50-10000 r=0.05 a=0.5 s=97 l=3 e=10000 D=true
+~/arcs-master/Examples/arcs-make arcs draft=/lustre/work/jmanthey/colaptes_arcs/colaptes_pilon_1_arcs2 reads=/lustre/scratch/jmanthey/09_colaptes_scaffolding/colaptes_interleaved t=16 m=50-10000 r=0.05 a=0.5 s=98 l=3 e=10000 D=true
+~/arcs-master/Examples/arcs-make arcs draft=/lustre/work/jmanthey/colaptes_arcs/colaptes_pilon_1_arcs2 reads=/lustre/scratch/jmanthey/09_colaptes_scaffolding/colaptes_interleaved t=16 m=50-10000 r=0.05 a=0.5 s=98 l=3 e=30000 D=true
+~/arcs-master/Examples/arcs-make arcs draft=/lustre/work/jmanthey/colaptes_arcs/colaptes_pilon_1_arcs2 reads=/lustre/scratch/jmanthey/09_colaptes_scaffolding/colaptes_interleaved t=16 m=50-10000 r=0.05 a=0.5 s=97 l=3 e=60000 D=true
+~/arcs-master/Examples/arcs-make arcs draft=/lustre/work/jmanthey/colaptes_arcs/colaptes_pilon_1_arcs2 reads=/lustre/scratch/jmanthey/09_colaptes_scaffolding/colaptes_interleaved t=16 m=50-10000 r=0.05 a=0.5 s=98 l=3 e=60000 D=true
+~/arcs-master/Examples/arcs-make arcs draft=/lustre/work/jmanthey/colaptes_arcs/colaptes_pilon_1_arcs2 reads=/lustre/scratch/jmanthey/09_colaptes_scaffolding/colaptes_interleaved t=16 m=50-10000 r=0.05 a=0.5 s=97 l=3 e=100000 D=true
+~/arcs-master/Examples/arcs-make arcs draft=/lustre/work/jmanthey/colaptes_arcs/colaptes_pilon_1_arcs2 reads=/lustre/scratch/jmanthey/09_colaptes_scaffolding/colaptes_interleaved t=16 m=50-10000 r=0.05 a=0.5 s=98 l=3 e=100000 D=true
+
+
+Asssembly					Parameters			Scaffold N50	Size		1KB Scaffolds
+Pacbio											0.845 Mb		1.366 Gb	9466
+Pacbio + Pilon									0.845 Mb		1.369 Gb	9466
+Pacbio + Pilon + Arcs		S=97, e=10k, l=3	1.299 Mb		1.375 Gb	8461
+Pacbio + Pilon + Arcs		S=98, e=10k, l=3	1.155 Mb		1.373 Gb	8756
+Pacbio + Pilon + Arcs		S=97, e=30k, l=3	1.835 Mb		1.369 Gb	7456
+Pacbio + Pilon + Arcs		S=98, e=30k, l=3	1.843 Mb		1.375 Gb	7694
+Pacbio + Pilon + Arcs ***	S=97, e=60k, l=3	1.860 Mb		1.371 Gb	7532
+Pacbio + Pilon + Arcs		S=98, e=60k, l=3	1.834 Mb		1.372 Gb	7718
+Pacbio + Pilon + Arcs		S=97, e=100k, l=3	1.615 Mb		1.370 Gb	7751
+Pacbio + Pilon + Arcs		S=98, e=100k, l=3	1.631 Mb		1.370 Gb	7919
+Pacbio + Pilon + Arcs2		S=97, e=10k, l=3	2.184 Mb		1.373 Gb	7341
+Pacbio + Pilon + Arcs2		S=98, e=10k, l=3	2.024 Mb		1.372 Gb	7414
+Pacbio + Pilon + Arcs2 ***	S=97, e=30k, l=3	2.506 Mb		1.375 Gb	7002
+Pacbio + Pilon + Arcs2		S=98, e=30k, l=3	2.439 Mb		1.374 Gb	7114
+Pacbio + Pilon + Arcs2 		S=97, e=60k, l=3	2.333 Mb		1.373 Gb	7197
+Pacbio + Pilon + Arcs2		S=98, e=60k, l=3	2.312 Mb		1.373 Gb	7209
+Pacbio + Pilon + Arcs2		S=97, e=100k, l=3	2.298 Mb		1.372 Gb	7203
+Pacbio + Pilon + Arcs2		S=98, e=100k, l=3	2.298 Mb		1.372 Gb	7215
+Pacbio + Pilon + Arcs3		S=97, e=10k, l=3	2.506 Mb		1.375 Gb	6932
+Pacbio + Pilon + Arcs3		S=98, e=10k, l=3	2.506 Mb		1.375 Gb	6963
+Pacbio + Pilon + Arcs3 		S=97, e=30k, l=3	2.593 Mb		1.375 Gb	6936
+Pacbio + Pilon + Arcs3		S=98, e=30k, l=3	2.563 Mb		1.375 Gb	6903
+Pacbio + Pilon + Arcs3 		S=97, e=60k, l=3	2.881 Mb		1.376 Gb	6791
+Pacbio + Pilon + Arcs3		S=98, e=60k, l=3	2.881 Mb		1.376 Gb	6802
+Pacbio + Pilon + Arcs3 ***	S=97, e=100k, l=3	3.111 Mb		1.376 Gb	6742
+Pacbio + Pilon + Arcs3		S=98, e=100k, l=3	3.026 Mb		1.375 Gb	6759
