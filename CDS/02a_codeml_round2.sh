@@ -22,7 +22,7 @@ sed -i "s/blank.fasta/${SGE_TASK_ID}_aligned_trimmed.fasta/g" codeml_2.ctl
 sed -i "s/blank_output.txt/${SGE_TASK_ID}_output_colaptes.txt/g" codeml_2.ctl
 sed -i 's/unrooted_tree.tre/unrooted_tree_colaptes.tre/g' codeml_2.ctl
 
-# run certhia iteration of codeml
+# run colaptes iteration of codeml
 codeml codeml_2.ctl
 
 # change the control file input and output names for apaloderma
