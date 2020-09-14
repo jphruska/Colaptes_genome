@@ -3,5 +3,4 @@ Northern Flicker Chromosome Level Assembly, including: (1) characterization of t
 
 
 
-![Image of Colaptes auratus]
-(~/Downloads/JDM14726.jpg)
+![Image of Colaptes auratus](~/Downloads/JDM14726.jpg)
