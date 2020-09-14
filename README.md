@@ -1,4 +1,4 @@
-# 'Chromosome level' *Colaptes auratus* genome assembly 
+# Chromosome level *Colaptes auratus* genome assembly 
 
 ![Image of Colaptes auratus](https://github.com/jphruska/Colaptes_genome/blob/master/JDM14726.jpg)
 Image of *Colaptes auratus auratus*. Photograph taken by Joseph Manthey in Lubbock, Texas. 
