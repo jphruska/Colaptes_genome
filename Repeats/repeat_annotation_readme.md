@@ -19,7 +19,7 @@
 12. From RepeatMasker output, create repeat landscape using caldivergencefromalign.pl and createrepeatlandscape.pl. 
 13. Prior to window analysis, remove TE overlaps using summarize_repeatmasker_remove_overlaps.R. 
 
-# TE Window Analysis
+# Repeat Window Analysis
 
 14. With input from summarize_repeatmasker_remove_overlaps.R, run colaptes_te_window_analysis.R to get TE content along non-overlapping 100 kb windows. 
 15. Using output from colaptes_te_window_analysis.R run plot_window_te.R to produce plot of TE content along scaffolds. 
