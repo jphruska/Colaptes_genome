@@ -1,6 +1,6 @@
 ## Repeat Annotation and Window Analysis Workflow
 
-# Custom Library
+# Custom Repeat Library
 
 1. Run repeatmodeler on assembly lacking HiC scaffolding (c05_colaptes_arcs3.FINAL.reordered_2.fasta) to identify repeats de novo. Prior to running repeatmodeler, build database of reference. 
 2. Run repeatmodeler. 
