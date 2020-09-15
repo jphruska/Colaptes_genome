@@ -26,7 +26,7 @@ We annotated transposable elements and repetitive content using a *de novo* repe
 
 ## CDS
 
-Additional details and scripts are provided in the **CDS** folder of this repository. 
+We annnotated CDS regions using MAKER, along with the custom repeat library and protein datasets from Downy Woodpecker *Picoides pubescens* and representatives of three closely related orders (Trogoniformes, Coraciiformes, and Bucerotiformes). After training SNAP and Augustus, we ran MAKER a second time to annotate genes. We plotted the distribution of cds regions across 100 kb non-overlapping windows of the genome. To estimate a *Colaptes* specific mutation rate we extracted four-fold degenerate sites found across alignments of CDS regions across Piciformes, Trogoniformes, Coraciiformes and Bucerotiformes and estimated branch lengths with a user-specified tree (Jarvis et al. 2014). Additional details and scripts are provided in the **CDS** folder of this repository. 
 
 
 
