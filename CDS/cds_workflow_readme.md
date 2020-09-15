@@ -1,6 +1,6 @@
-# Workflow describing gene discovery and annotation, followed by mutation rate analysis. 
+## Workflow describing gene discovery and annotation, followed by mutation rate analysis. 
 
-Gene discovery and annotation
+# Gene discovery and annotation
 
 1. Run MAKER with protein Apaloderma, Buceros, Merops and Picoides protein datasets. 
 2. Train SNAP with round 1 MAKER output. 
@@ -10,7 +10,7 @@ Gene discovery and annotation
 6. Rename MAKER round 2 output. 
 7. Extract CDS (colaptes_cds.fasta). 
 
-Mutation rate analysis
+# Mutation rate analysis
 
 8. Download CDS for species representing closely related orders and perform reciprocal BLAST of all species vs Colaptes. 
 9. Download phylogenetic tree comprising all orders of Neoaves (Jarvis et al. 2014) and prune tree to the four representative orders (Bucerotiformes, Piciformes, Trogoniformes and Coraciiformes). 
@@ -22,7 +22,7 @@ Mutation rate analysis
 15. Use appropriate model of sequence evolution and user-specified tree (Jarvis et al. 2014) to estimate branch lengths based on four-fold degenerate sites. 
 16. Use Colaptes-specific branch length of resulting tree to estimate a mean and 95% HPD distribution of Colaptes-specific mutation rates. 
 
-Window analysis
+# Window analysis
 
 17. Reduce colaptes_cds.fasta file so it only includes information on the the start and end points of cds content on the scaffolds of interest (in this case the scaffolds that showed strong synteny to Gallus assembly). 
 18. Use the subsequent reduced cds content file, run colaptes_gene_window.R to obtain cds content (colaptes_cds_props.txt) along non-overlapping 100 kb windows. 
