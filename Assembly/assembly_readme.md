@@ -1,4 +1,4 @@
-Genome assembly workflow. 
+## Genome assembly workflow. 
 
 1. PacBio read assembly into contigs with canu. 
 2. Polish PacBio assembly with cleaned chromium_10x reads. 
