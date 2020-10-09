@@ -30,7 +30,7 @@ blastn -query colaptes_cds_renamed.fasta -out q_colaptes_s_buceros.blast -task b
 -evalue 1e-6 -outfmt 6 -max_target_seqs 100 -num_threads 12
 
 
-# blast other species to certhia database
+# blast other species to colaptes database
 
 blastn -query merops_cds_renamed.fasta -out q_merops_s_colaptes.blast -task blastn -db colaptes_cds \
 -evalue 1e-6 -outfmt 6 -max_target_seqs 100 -num_threads 12
