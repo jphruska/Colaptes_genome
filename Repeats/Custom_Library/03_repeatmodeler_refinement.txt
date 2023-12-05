@@ -9,7 +9,7 @@ blastn -query colaptes-families.fa -out colaptes_families_repbase.blast -task rm
 
 # remove any repeatmodeler sequences that were >= 98% identical to repbase sequences
 
-# make a blast database of the colaptes genome (non-filtered or reeorganized to zebra finch order)
+# make a blast database of the colaptes genome 
 
 makeblastdb -in c05_colaptes_arcs3.fasta -dbtype nucl -out ca_original
 
